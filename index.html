@@ -599,7 +599,6 @@ document.querySelectorAll('.lang button').forEach(b=>{
   b.addEventListener('click',()=>setLang(b.dataset.lang));
 });
 let saved=null;try{saved=localStorage.getItem('lining-lang')}catch(e){}
-setLang(saved==='en'?'en':'zh');
 
 /* 社交占位链接：点击给占位反馈 */
 const toastEl=document.getElementById('toast');
@@ -688,6 +687,7 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'){lbIndex=(lbIndex+1)%slides.length;fillLightbox();}
 });
 renderWorks();
+setLang(saved==='en'?'en':'zh');
 
 /* ===== 滚动揭示 ===== */
 const io=new IntersectionObserver(entries=>{
